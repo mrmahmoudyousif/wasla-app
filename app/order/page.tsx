@@ -52,21 +52,28 @@ function OrderFormContent() {
   };
 
   if (success) {
-    return (
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0B1120] flex items-center justify-center p-4">
-        <div className="bg-white dark:bg-[#111827] p-6 md:p-10 rounded-2xl shadow-xl max-w-md w-full text-center">
-          <div className="text-4xl md:text-6xl mb-4 md:mb-6">✅</div>
-          <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2">تم استلام طلبك بنجاح!</h1>
-          <p className="text-sm md:text-base text-slate-500 mb-6">رقم طلبك هو:</p>
-          <div className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-2xl md:text-3xl font-bold py-3 md:py-4 rounded-xl mb-6 md:mb-8">
-            {orderNumber}
-          </div>
-          <Link href="/" className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm md:text-base">العودة للرئيسية</Link>
+  return (
+    <div className="min-h-screen bg-slate-50 dark:bg-[#0B1120] flex items-center justify-center p-4">
+      <div className="bg-white dark:bg-[#111827] p-6 md:p-10 rounded-2xl shadow-xl max-w-md w-full text-center">
+        <div className="text-4xl md:text-6xl mb-4 md:mb-6">✅</div>
+        <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2">تم استلام طلبك بنجاح!</h1>
+        <p className="text-sm md:text-base text-slate-500 mb-2">رقم طلبك هو:</p>
+        <div className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-2xl md:text-3xl font-bold py-3 md:py-4 rounded-xl mb-4 border-2 border-blue-200 dark:border-blue-800">
+          {orderNumber}
         </div>
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-400 p-3 rounded-xl mb-6 text-sm font-bold border border-yellow-200 dark:border-yellow-800">
+          ⚠️ يرجى تصوير هذه الشاشة أو حفظ رقم الطلب، لكي تتمكن من تتبعه لاحقاً.
+        </div>
+        <Link href="/track" className="block w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-xl text-sm md:text-base mb-3 transition">
+          تتبع طلبي الآن
+        </Link>
+        <Link href="/" className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm md:text-base transition">
+          العودة للرئيسية
+        </Link>
       </div>
-    );
-  }
-
+    </div>
+  );
+}
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0B1120] py-8 md:py-12 px-4">
       <div className="max-w-2xl mx-auto">

@@ -1,20 +1,106 @@
 @import "tailwindcss";
 
-/* تفعيل الوضع الليلي عبر الكلاس */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* =========================================
+   1. الثيم النهاري الافتراضي (Light)
+   ========================================= */
 :root {
-  --bg-color: #f8fafc;
-  --text-color: #0f172a;
+  --bg-main: #f1f5f9;         /* رمادي دافئ مريح للعين */
+  --text-main: #0f172a;       /* نص داكن */
+  --primary: #2563eb;         /* أزرار زرقاء */
+  --navbar-bg: #ffffff;       /* شريط تنقل أبيض نقي */
+  --navbar-text: #0f172a;     /* نص شريط التنقل */
+  --card-bg: #ffffff;         /* بطاقات بيضاء */
 }
 
+/* الوضع الليلي للثيم النهاري */
 .dark {
-  --bg-color: #0B1120; /* نفس درجة البانا ستادي */
-  --text-color: #f8fafc;
+  --bg-main: #0B1120;         /* خلفية سوداء مائلة للرمادي */
+  --text-main: #f8fafc;       /* نص أبيض */
+  --primary: #3b82f6;         /* أزرار زرقاء فاتحة */
+  --navbar-bg: #111827;       /* شريط تنقل داكن */
+  --navbar-text: #f8fafc;     /* نص أبيض */
+  --card-bg: #111827;         /* بطاقات داكنة */
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* =========================================
+   2. الثيم الوردي (Pink) - المتجر النسائي
+   ========================================= */
+.theme-pink {
+  --bg-main: #fce7f3;         /* وردي فاتح واضح */
+  --text-main: #500724;       /* نص وردي داكن جداً */
+  --primary: #db2777;         /* أزرار وردية */
+  --navbar-bg: #be185d;       /* شريط تنقل وردي داكن */
+  --navbar-text: #ffffff;     /* نص أبيض */
+  --card-bg: #ffffff;
 }
+
+/* الوضع الليلي للثيم الوردي */
+.dark.theme-pink {
+  --bg-main: #1a0b12;         /* أسود بلمسة وردية */
+  --text-main: #fce7f3;       /* نص وردي فاتح */
+  --primary: #ec4899;         /* أزرار وردية ساطعة */
+  --navbar-bg: #831843;       /* شريط تنقل وردي داكن جداً */
+  --navbar-text: #ffffff;
+  --card-bg: #2d121f;
+}
+
+/* =========================================
+   3. الثيم الزمردي (Emerald) - الانتعاش
+   ========================================= */
+.theme-emerald {
+  --bg-main: #d1fae5;         /* أخضر فاتح منعش */
+  --text-main: #022c22;       /* نص أخضر داكن */
+  --primary: #059669;         /* أزرار خضراء */
+  --navbar-bg: #047857;       /* شريط تنقل أخضر داكن */
+  --navbar-text: #ffffff;
+  --card-bg: #ffffff;
+}
+
+/* الوضع الليلي للثيم الزمردي */
+.dark.theme-emerald {
+  --bg-main: #061a14;         /* أسود بلمسة خضراء */
+  --text-main: #d1fae5;       /* نص أخضر فاتح */
+  --primary: #10b981;
+  --navbar-bg: #064e3b;
+  --navbar-text: #ffffff;
+  --card-bg: #0f2e23;
+}
+
+/* =========================================
+   4. الثيم الملكي (Royal) - الفخامة
+   ========================================= */
+.theme-royal {
+  --bg-main: #ede9fe;         /* بنفسجي فاتح */
+  --text-main: #2e1065;       /* نص بنفسجي داكن */
+  --primary: #7c3aed;         /* أزرار بنفسجية */
+  --navbar-bg: #6d28d9;       /* شريط تنقل بنفسجي داكن */
+  --navbar-text: #ffffff;
+  --card-bg: #ffffff;
+}
+
+/* الوضع الليلي للثيم الملكي */
+.dark.theme-royal {
+  --bg-main: #110b1f;         /* أسود بلمسة بنفسجية */
+  --text-main: #ede9fe;       /* نص بنفسجي فاتح */
+  --primary: #8b5cf6;
+  --navbar-bg: #4c1d95;
+  --navbar-text: #ffffff;
+  --card-bg: #1e1533;
+}
+
+/* تطبيق المتغيرات على الموقع */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* كلاسات مساعدة لكي نستخدم الألوان في Tailwind بسهولة */
+.bg-theme { background-color: var(--primary); }
+.text-theme { color: var(--primary); }
+.bg-card { background-color: var(--card-bg); }
+.bg-nav { background-color: var(--navbar-bg); }
+.text-nav { color: var(--navbar-text); }
+.border-theme { border-color: var(--primary); }

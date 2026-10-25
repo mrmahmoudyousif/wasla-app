@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast"; // استيراد موزع الإشعارات
 
 const cairo = Cairo({ subsets: ["arabic", "latin"] });
 
@@ -15,9 +16,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // لاحظ السطر التالي: suppressHydrationWarning هو المفتاح السري لحل مشكلة الوضع الليلي
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={`${cairo.className} antialiased`}>
+        {/* هذا هو المكون الذي سيظهر الإشعارات الأنيقة */}
+        <Toaster 
+          position="top-center" 
+          toastOptions={{
+            style: {
+              background: '#333',
+              color: '#fff',
+              borderRadius: '10px',
+              fontFamily: 'inherit'
+            },
+          }} 
+        />
         {children}
       </body>
     </html>

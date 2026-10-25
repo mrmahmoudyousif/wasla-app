@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- الخلفية: دائرة زرقاء داكنة -->
+  <circle cx="50" cy="50" r="45" fill="#1e3a8a" />
+  
+  <!-- الإطار الذهبي الخارجي -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#fbbf24" stroke-width="4" />
+
+  <!-- حرف W باللون الذهبي -->
+  <text x="50" y="68" font-family="Arial, sans-serif" font-size="55" font-weight="bold" fill="#fbbf24" text-anchor="middle">W</text>
+</svg>
